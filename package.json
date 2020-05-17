@@ -1,0 +1,55 @@
+{
+	"name": "jacamo",
+	"displayName": "JaCaMo4Code",
+	"description": "blabla",
+	"version": "1.0.0",
+	"publisher": "tabajara-krausburg",
+	"engines": {
+		"vscode": "^1.45.0"
+	},
+	"categories": ["Programming Languages", "Snippets"],
+	"contributes": {
+		"languages": [
+			{
+			   "id": "mas2j",
+			   "aliases": ["mas2j"],
+			   "extensions": [".mas2j"]
+			},
+			{
+			   "id": "jason",
+			   "aliases": ["Jason", "asl"],
+			   "extensions": [".asl"],
+			   "configuration": "./language-configuration.json"
+			},
+			{
+                "id": "jcm",
+                "aliases": ["JaCaMo", "jcm"],
+                "extensions": [".jcm"],
+                "configuration": "./language-configuration.json"
+            }
+		 ],
+		 "grammars": [
+			{
+			   "language": "mas2j",
+			   "scopeName": "mas2j",
+			   "path": "./syntaxes/mas2j.tmLanguage.json"
+			},
+			{
+			   "language": "jason",
+			   "scopeName": "jason",
+			   "path": "./syntaxes/jason.tmLanguage.json"
+			},
+			{
+				"language": "jcm",
+				"scopeName": "source.jcm",
+				"path": "./syntaxes/jcm.tmLanguage.json"
+			}
+		 ],
+		"snippets": [
+			{
+			  "language": "jason",
+			  "path": "./snippets/asl.json"
+			}
+		]
+	}
+}

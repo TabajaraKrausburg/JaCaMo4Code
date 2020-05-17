@@ -1,0 +1,153 @@
+{
+   "information_for_contributors": [
+      "This grammer is based on https://github.com/jason-lang/atom-mas2j, which is available under the GNU LESSER GENERAL PUBLIC LICENSE ."
+   ],
+   "scopeName": "jason",
+   "name": "Agent Speak Language file",
+   "patterns": [
+      { "include": "#comments" },
+      { "include": "#constants" },      
+      { "include": "#keywords" },
+      { "include": "#strings" },  
+      { "include": "#supports" },    
+      { "include": "#operators" },  
+      { "include": "#variables" }
+   ],
+   "repository": {
+      "comments": {
+         "patterns": [
+            {
+               "begin": "//",
+               "end": "$",
+               "name": "comment.line.double-slash.asl"
+            },
+            {
+               "begin": "/\\*",
+               "end": "\\*/",
+               "name": "comment.block.asl"
+            }
+         ]
+      },
+      "constants": {
+         "patterns": [
+            {
+               "match": "\\b(true|false)\\b",
+               "name": "constant.character.language.asl"
+            },
+            {
+               "match": "\\d+",
+               "name": "constant.character.numeric.integer.asl"
+            },
+            {
+               "match": "(\\d*\\.\\d+)([eE][+-]?[0-9]+)?",
+               "name": "constant.character.numeric.float.asl"
+            }
+         ]
+      },
+      "keywords": {
+         "patterns": [
+            {
+               "match": "\\b(if|while|for|begin|end|atomic)\\b",
+               "name": "keyword.control.asl"
+            },
+            {
+               "match": "(div|mod)\\b",
+               "name": "keyword.operator.asl"
+            }            
+         ]
+      },
+      "operators":{
+         "patterns":[
+            {
+               "match": "(\\+|-|<|>|=<|>=|==|=:=|=|;)",
+               "name": "keyword.operator.asl"
+            },
+            {
+               "match": "(~|&|\\||(not\\b))",
+               "name": "keyword.operator.asl"
+            },
+            {
+               "match": "(:|<-|\\.$|@|::)",
+               "name": "keyword.other.asl"
+            }
+         ]
+      },
+      "strings": {
+         "patterns": [
+            {
+               "begin": "\"",
+               "end": "\"",
+               "name": "string.quoted.double.asl"
+            }
+         ]
+      },
+      "supports": {
+         "patterns": [
+            {
+               "match": "(?:^|\\s)[@]\\w+\\b",
+               "name": "constant.numeric.label.asl"
+            },
+            {
+               "match": "[+]([~])?[a-z]\\w*\\b",
+               "name": "support.function.event.belief.addition.asl"
+            },
+            {
+               "match": "[-]([~])?[a-z]\\w*\\b",
+               "name": "support.function.event.belief.delete.asl"
+            },
+            {
+               "match": "[\\^][!][a-z]\\w*\\b",
+               "name": "support.function.event.meta.achievement.asl"
+            },
+            {
+               "match": "[+][!]([~])?[a-z]\\w*\\b",
+               "name": "support.function.event.achievement.asl"
+            },            
+            {
+               "match": "(?:^|\\s)[+][?]([~])?[a-z]\\w*\\b",
+               "name": "support.function.event.test.asl"
+            },
+            {
+               "match": "(?:^|\\s)[-][!]([~])?[a-z]\\w*\\b",
+               "name": "support.function.event.failure.achievement.asl"
+            },
+            {
+               "match": "(?:^|\\s)[-][?]([~])?[a-z]\\w*\\b",
+               "name": "support.function.event.failure.test.asl"
+            },
+            {
+               "match": "[!][!]?[a-z]\\w*\\b",
+               "name": "support.function.goal.achievement.asl"
+            },
+            {
+               "match": "[?]([~])?[a-z]\\w*\\b",
+               "name": "support.function.goal.test.asl"
+            },
+            {
+               "match": "(?:^|\\s)\\.[a-z][\\w*\\.]*",
+               "name": "support.function.internal_action.std.asl"
+            },
+            {
+               "match": "(?:^|\\s)([a-z][\\w]*)\\.[\\w\\.]+",
+               "name": "support.function.internal_action.asl"
+            },
+            {
+               "match": "[a-z][\\w]*",
+               "name": "support.type.atom.asl"
+            }
+         ]
+      },
+      "variables": {
+         "patterns": [
+            {
+               "match": "\\b[A-Z]\\w*\\b",
+               "name": "variable.other.asl"
+            },
+            {
+               "match": "\\b_\\b",
+               "name": "variable.other.asl"
+            }
+         ]
+      }
+   }
+}

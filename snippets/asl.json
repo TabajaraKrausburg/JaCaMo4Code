@@ -1,0 +1,22 @@
+{    
+  "p_ach" : {        
+    "prefix": "plan achievement",
+    "body": ["+!${1:plan}", "   : ${2:context}","<- ", "   ${3:.print(\"${4:string}\");}", "   ."],
+    "description": "generates an achievement plan"
+  },
+  "p_ach_f" : {        
+    "prefix": "plan achievement failure",
+    "body": ["-!${1:plan}", "   : ${2:context}","<- ", "   ${3:.print(\"${4:string}\");}", "   ."],
+    "description": "generates a failure plan for an achievement goal"
+  },
+  "p_tst" : {        
+    "prefix": "plan test",
+    "body": ["+?${1:plan}", "   : ${2:context}","<- ", "   ${3:.print(\"${4:string}\");}", "   ."],
+    "description": "generates a test plan"
+  },
+  "p_tst_f" : {        
+    "prefix": "plan test failure",
+    "body": ["-?${1:plan}", "   : ${2:context}","<- ", "   ${3:.print(\"${4:string}\");}", "   ."],
+    "description": "generates a failure plan for a test goal"
+  }
+}

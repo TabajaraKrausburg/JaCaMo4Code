@@ -1,11 +1,15 @@
 {
-	"name": "jacamo",
+	"name": "jacamo4code",
 	"displayName": "JaCaMo4Code",
-	"description": "blabla",
-	"version": "1.0.0",
+	"description": "JaCaMo syntax highlighting and code snippets for VS Code.",
+	"version": "0.0.1",
 	"publisher": "tabajara-krausburg",
 	"engines": {
 		"vscode": "^1.45.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/TabajaraKrausburg/JaCaMo4Code"
 	},
 	"categories": ["Programming Languages", "Snippets"],
 	"contributes": {

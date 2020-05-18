@@ -5,7 +5,52 @@
    "scopeName": "jason",
    "name": "Agent Speak Language file",
    "patterns": [
-      { "include": "#comments" },
+      { "include": "#comments" },   
+      {
+			"begin": "<-\\s*",
+			"beginCaptures": { "0": { "name": "keyword.other.asl" } },
+			"end": "\\s*(\\.\\s)",
+			"endCaptures": { "0": { "name": "keyword.other.asl" } },
+			"patterns": [
+            { "include": "#comments" },   
+            { "include": "#constants" },   
+            { "include": "#strings" },  
+            { "include": "#keywords" },     
+            { "include": "#goals" },
+            { "include": "#actions" },
+            { "include": "#operations" },
+            { "include": "#supports" },
+            { "include": "#variables" }
+			]
+      },
+      {
+			"begin": "(\\+|-|\\^)\\s*",
+			"beginCaptures": { "0": { "name": "keyword.other.asl" } },
+			"end": "\\s*(\\s)",
+			"endCaptures": { "0": { "name": "keyword.other.asl" } },
+			"patterns": [   
+            { "include": "#events" }, 
+            { "include": "#constants" },   
+            { "include": "#strings" }, 
+            { "include": "#supports" },
+            { "include": "#variables" }
+			]
+      },
+      {
+			"begin": ":\\s*",
+			"beginCaptures": { "0": { "name": "keyword.other.asl" } },
+			"end": "\\s*(\\s)",
+			"endCaptures": { "0": { "name": "keyword.other.asl" } },
+			"patterns": [    
+            { "include": "#actions" },
+            { "include": "#constants" },   
+            { "include": "#strings" }, 
+            { "include": "#operations" },
+            { "include": "#supports" },
+            { "include": "#variables" }            
+			]
+      },
+      { "include": "#declaration" },  
       { "include": "#constants" },      
       { "include": "#keywords" },
       { "include": "#strings" },  
@@ -81,40 +126,20 @@
             }
          ]
       },
-      "supports": {
-         "patterns": [
+      "declaration":{
+         "patterns": [         
             {
-               "match": "(?:^|\\s)[@]\\w+\\b",
-               "name": "constant.numeric.label.asl"
+               "match": "[!][a-z]\\w*\\b",
+               "name": "support.function.goal.achievement.asl"
             },
             {
-               "match": "[+]([~])?[a-z]\\w*\\b",
-               "name": "support.function.event.belief.addition.asl"
-            },
-            {
-               "match": "[-]([~])?[a-z]\\w*\\b",
-               "name": "support.function.event.belief.delete.asl"
-            },
-            {
-               "match": "[\\^][!][a-z]\\w*\\b",
-               "name": "support.function.event.meta.achievement.asl"
-            },
-            {
-               "match": "[+][!]([~])?[a-z]\\w*\\b",
-               "name": "support.function.event.achievement.asl"
-            },            
-            {
-               "match": "(?:^|\\s)[+][?]([~])?[a-z]\\w*\\b",
-               "name": "support.function.event.test.asl"
-            },
-            {
-               "match": "(?:^|\\s)[-][!]([~])?[a-z]\\w*\\b",
-               "name": "support.function.event.failure.achievement.asl"
-            },
-            {
-               "match": "(?:^|\\s)[-][?]([~])?[a-z]\\w*\\b",
-               "name": "support.function.event.failure.test.asl"
-            },
+               "match": "([~])?[a-z]\\w*\\b",
+               "name": "support.function.belief.asl"
+            }
+         ]
+      },
+      "goals":{
+         "patterns": [         
             {
                "match": "[!][!]?[a-z]\\w*\\b",
                "name": "support.function.goal.achievement.asl"
@@ -124,16 +149,72 @@
                "name": "support.function.goal.test.asl"
             },
             {
-               "match": "(?:^|\\s)\\.[a-z][\\w*\\.]*",
+               "match": "[!][!]?[A-Z]\\w*::\\w*\\b",
+               "name": "support.function.goal.achievement.asl"
+            },
+            {
+               "match": "[?]([~])?[A-Z]\\w*::\\w*\\b",
+               "name": "support.function.goal.test.asl"
+            }
+         ]
+      },
+      "events":{
+         "patterns":[
+            {
+               "match": "([~])?[a-z]\\w*\\b",
+               "name": "support.function.event.belief.asl"
+            },
+            {
+               "match": "[!]([~])?[a-z]\\w*\\b",
+               "name": "support.function.event.goal.asl"
+            }
+         ]
+      },
+      "actions":{
+         "patterns":[
+            {
+               "match": "\\.[a-z][\\w*\\.]*",
                "name": "support.function.internal_action.std.asl"
             },
             {
-               "match": "(?:^|\\s)([a-z][\\w]*)\\.[\\w\\.]+",
+               "match": "([a-z][\\w]*)\\.[\\w\\.]+",
                "name": "support.function.internal_action.asl"
             },
             {
+               "match": "[-\\+]([~])?[a-z]\\w*\\b",
+               "name": "support.function.belief.deletion.addition.asl"
+            },
+            {
+               "match": "[\\+]([~])?[a-z]\\w*\\b",
+               "name": "support.function.belief.addition.asl"
+            },
+            {
+               "match": "[-]([~])?[a-z]\\w*\\b",
+               "name": "support.function.belief.deletion.asl"
+            }            
+         ]
+      },
+      "operations":{
+         "patterns":[
+            {
+               "match": "([a-z][\\w]*)[\\w\\.]+",
+               "name": "support.function.internal_action.asl"
+            }
+         ]
+      },
+      "supports": {
+         "patterns": [
+            {
+               "match": "(?:^|\\s)[@]\\w+\\b",
+               "name": "constant.numeric.label.asl"
+            },            
+            {
                "match": "[a-z][\\w]*",
                "name": "support.type.atom.asl"
+            },
+            {
+               "match": "([A-Z]|[a-z])[\\w]*::",
+               "name": "support.type.module.asl"
             }
          ]
       },

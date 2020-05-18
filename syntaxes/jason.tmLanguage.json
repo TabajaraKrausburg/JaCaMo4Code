@@ -7,6 +7,7 @@
    "patterns": [
       { "include": "#comments" },   
       {
+         "name": "meta.function.plan.body",
 			"begin": "<-\\s*",
 			"beginCaptures": { "0": { "name": "keyword.other.asl" } },
 			"end": "\\s*(\\.\\s)",
@@ -24,6 +25,7 @@
 			]
       },
       {
+         "name": "meta.function.plan.event",
 			"begin": "(\\+|-|\\^)\\s*",
 			"beginCaptures": { "0": { "name": "keyword.other.asl" } },
 			"end": "\\s*(\\s)",
@@ -37,6 +39,7 @@
 			]
       },
       {
+         "name": "meta.function.plan.context",
 			"begin": ":\\s*",
 			"beginCaptures": { "0": { "name": "keyword.other.asl" } },
 			"end": "\\s*(\\s)",
@@ -92,8 +95,12 @@
       "keywords": {
          "patterns": [
             {
-               "match": "\\b(if|while|for|begin|end|atomic)\\b",
+               "match": "\\b(if|while|for|begin|end)\\b",
                "name": "keyword.control.asl"
+            },
+            {
+               "match": "\\b(atomic)\\b",
+               "name": "storage.modifier.atomic"
             },
             {
                "match": "(div|mod)\\b",
@@ -178,19 +185,19 @@
             },
             {
                "match": "([a-z][\\w]*)\\.[\\w\\.]+",
-               "name": "support.function.internal_action.asl"
+               "name": "entity.name.function.internal_action.asl"
             },
             {
                "match": "[-\\+]([~])?[a-z]\\w*\\b",
-               "name": "support.function.belief.deletion.addition.asl"
+               "name": "entity.name.function.belief.deletion.addition.asl"
             },
             {
                "match": "[\\+]([~])?[a-z]\\w*\\b",
-               "name": "support.function.belief.addition.asl"
+               "name": "entity.name.function.belief.addition.asl"
             },
             {
                "match": "[-]([~])?[a-z]\\w*\\b",
-               "name": "support.function.belief.deletion.asl"
+               "name": "entity.name.function.belief.deletion.asl"
             }            
          ]
       },
@@ -198,7 +205,7 @@
          "patterns":[
             {
                "match": "([a-z][\\w]*)[\\w\\.]+",
-               "name": "support.function.internal_action.asl"
+               "name": "entity.name.function.operation.asl"
             }
          ]
       },

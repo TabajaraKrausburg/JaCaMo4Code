@@ -35,12 +35,12 @@
 		 "grammars": [
 			{
 			   "language": "mas2j",
-			   "scopeName": "mas2j",
+			   "scopeName": "source.mas2j",
 			   "path": "./syntaxes/mas2j.tmLanguage.json"
 			},
 			{
 			   "language": "jason",
-			   "scopeName": "jason",
+			   "scopeName": "source.jason",
 			   "path": "./syntaxes/jason.tmLanguage.json"
 			},
 			{

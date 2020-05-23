@@ -4,9 +4,11 @@
    "patterns": [
       { "include": "#comments" },
       { "include": "#keywords" },
+      { "include": "#operators" },
       { "include": "#strings" },
       { "include": "#supports" },
-      { "include": "#variables" }
+      { "include": "#variables" },
+      { "include": "source.jason#constants" }
    ],
    "repository": {
       "comments": {
@@ -14,20 +16,12 @@
             {
                "begin": "//",
                "end": "$",
-               "name": "comment.line.double-slash.asl"
+               "name": "comment.line.double-slash.mas2j"
             },
             {
                "begin": "/\\*",
                "end": "\\*/",
-               "name": "comment.block.asl"
-            }
-         ]
-      },
-      "constants": {
-         "patterns": [
-            {
-               "match": "\\b(true|false)\\b",
-               "name": "constants.language.mas2j"
+               "name": "comment.block.mas2j"
             }
          ]
       },
@@ -36,12 +30,25 @@
             {
                "match":
                   "\\b(MAS|infrastructure|agents|environment|executionControl|classpath|aslSourcePath)\\b",
-               "name": "keyword.control.asl"
+               "name": "keyword.control.mas2j"
             },
             {
                "match":
                   "\\b(discard|verbose|at|agentClass|agentArchClass|beliefBaseClass|goals|beliefs)\\b",
-               "name": "keyword.operator.asl"
+               "name": "keyword.control.mas2j"
+            },
+            {
+               "match":
+                  "\\b(Centralised)\\b",
+               "name": "keyword.control.mas2j"
+            }
+         ]
+      },
+      "operators":{
+         "patterns":[
+            {
+               "match": "(#)",
+               "name": "keyword.control.flow.mas2j"
             }
          ]
       },
@@ -50,7 +57,7 @@
             {
                "begin": "\"",
                "end": "\"",
-               "name": "string.quoted.double.asl"
+               "name": "string.quoted.double.mas2j"
             }
          ]
       },
@@ -58,11 +65,15 @@
          "patterns": [
             {
                "match": "(?:^|\\s)[@]\\w+\\b",
-               "name": "constant.numeric.asl"
+               "name": "constant.numeric.mas2j"
+            },
+            {
+               "match": "\\b[a-z]\\w*(\\.\\w+)*\\b",
+               "name": "support.function.mas2j"
             },
             {
                "match": "\\b[a-z]\\w*\\b",
-               "name": "support.type.asl"
+               "name": "support.type.mas2j"
             }
          ]
       }

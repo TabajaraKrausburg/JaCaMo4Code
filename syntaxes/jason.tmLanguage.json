@@ -1,5 +1,5 @@
 {
-   "scopeName": "jason",
+   "scopeName": "source.jason",
    "name": "Agent Speak Language file",
    "patterns": [
       { "include": "#comments" }, 

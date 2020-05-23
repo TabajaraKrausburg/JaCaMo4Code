@@ -33,14 +33,18 @@
 		},
 		"keywords": {
 		   "patterns": [
-			  {
-				 "match": "\\b(mas|platform|agent|workspace|artifact|organisation|group|scheme|uses|class-path|asl-path|org-path|java-path)\\b",
-				 "name": "keyword.control.jcm"
-			  },
-			  {
-				 "match": "\\b(instances|ag-arch|ag-class|ag-bb-class|goals|beliefs|focus|focuse-by|agents|join|roles|in|debug|responsible-for|verbose|players)\\b",
-				 "name": "keyword.operator.jcm"
-			  }
+				{
+					"match": "\\b(mas|platform|agent|workspace|artifact|organisation|group|scheme|uses|class-path|asl-path|org-path|java-path)\\b",
+					"name": "keyword.control.jcm"
+				},
+				{
+					"match": "\\b(responsible-for|players)\\b",
+					"name": "keyword.control.jcm"
+				},
+				{
+					"match": "\\b(instances|ag-arch|ag-class|ag-bb-class|goals|beliefs|focus|focuse-by|agents|join|roles|in|debug|responsible-for|verbose|players)\\b",
+					"name": "keyword.operator.jcm"
+				}
 		   ]
 		},
 		"strings": {

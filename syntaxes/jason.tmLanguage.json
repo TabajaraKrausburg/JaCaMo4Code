@@ -180,6 +180,7 @@
                "end": "\\.\\s",
                "endCaptures": {"0": {"name": "keyword.other.asl"}},
                "patterns": [  
+                  { "include": "#comments" }, 
                   { "include": "#operators" },
                   { "include": "#module" },
                   { "include": "#action" },                  

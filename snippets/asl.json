@@ -1,4 +1,14 @@
 {    
+  "rule" : {        
+    "prefix": "j- rule",
+    "body": ["${1:rule}", ":-","\t${2:part_1} &","\t${3:part_2}", "\t."],
+    "description": "generates a rule"
+  },
+  "plan" : {        
+    "prefix": "j- plan",
+    "body": ["${1|+,-,^|}${2|!,?|}${3:plan}", "\t: ${4:context}","<- ", "\t${5:.print(\"${6:string}\");}", "\t."],
+    "description": "generates a plan"
+  },
   "p_ach" : {        
     "prefix": "j- plan achievement",
     "body": ["+!${1:plan}", "   : ${2:context}","<- ", "   ${3:.print(\"${4:string}\");}", "   ."],
@@ -18,5 +28,5 @@
     "prefix": "j- plan test failure",
     "body": ["-?${1:plan}", "   : ${2:context}","<- ", "   ${3:.print(\"${4:string}\");}", "   ."],
     "description": "generates a failure plan for a test goal"
-  }
+  }  
 }

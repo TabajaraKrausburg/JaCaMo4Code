@@ -418,7 +418,8 @@
                      "match": "~?[a-z][\\w]*",
                      "name": "support.type.atom.asl"
                   },
-                  { "include": "#variables" }                 
+                  { "include": "#variables" },
+                  { "include": "#terms" }
                ]
             }         
          ]

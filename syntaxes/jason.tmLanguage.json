@@ -305,6 +305,7 @@
                "endCaptures": { "0": { "name": "keyword.other.asl" } },
                "patterns": [    
                   { "include": "#comments" },   
+                  { "include": "#module" },   
                   { "include": "#constants" },   
                   { "include": "#strings" }, 
                   { "include": "#operators" },
@@ -386,6 +387,10 @@
          "patterns": [
             {
                "match": "([A-Z]|[a-z])[\\w]*::",
+               "name": "support.type.module.asl"
+            },
+            {
+               "match": "\\s*::",
                "name": "support.type.module.asl"
             }         
          ]

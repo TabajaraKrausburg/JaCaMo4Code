@@ -1,0 +1,73 @@
+{    
+  "org" : {        
+    "prefix": "j- org",
+    "body": [
+      "<?xml id=\"${1:id}\" os-version=\"${2:vesion}\" version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>", 
+      "<organisational-specification xmlns=\"http://moise.sourceforge.net/os\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://moise.sourceforge.net/os http://moise.sourceforge.net/xml/os.xsd\">", 
+      "\t${3:j- str spc}",
+      "\t",
+      "\t${4:j- func spc}",
+      "\t",
+      "\t${5:j- norm spc}",
+      "</organisational-specification>"],
+    "description": "generates an organisation in xml"
+  },
+
+  "structural" : {        
+    "prefix": "j- str spc",
+    "body": ["<structural-specification>", "\t${1:j- str roles}", "\t${2:j- str group}","</structural-specification>"],
+    "description": "generates a rule"
+  },  
+  "roles" : {        
+    "prefix": "j- str roles",
+    "body": ["<role-definitions>","\t<role id=\"${1:role}\" min=\"1\" max=\"1\" />","</role-definitions>"],
+    "description": "role clause to declare all roles that belong to a group"
+  },
+  "group" : {        
+    "prefix": "j- str group",
+    "body": ["<group-specification id=\"${1:group id}\" min=\"1\" max=\"${2:10}\">","\t<roles>", "\t\t<role id=\"${3:role id}\" />", "\t</roles>", "</group-specification>"],
+    "description": "group clause"
+  },
+  "group sub" : {        
+    "prefix": "j- str group subgroup",
+    "body": ["<group-specification id=\"${1:group id}\">","\t<subgroups>", "\t\t${2:j- str group}", "\t\t${3:j- str group}", "\t</subgroups>", "</group-specification>"],
+    "description": "group clause with subgroups"
+  },
+
+  "functional" : {        
+    "prefix": "j- func spc",
+    "body": ["<functional-specification>", "\t${1:j- func sch}", "</functional-specification>"],
+    "description": "generates a rule"
+  }, 
+  "scheme" : {        
+    "prefix": "j- func sch",
+    "body": ["<scheme id=\"${1:scheme id}\">", "\t${2:j- func goal plan}", "\t${3:j- func mission}", "</scheme>"],
+    "description": "scheme clause"
+  },
+  "goalplan" : {        
+    "prefix": "j- func goal plan",
+    "body": ["<goal id=\"${1:goal id}\">", "\t<plan operator=\"${2|sequence,parallel,choice|}\">","\t\t${3:j- func goal}","\t</plan>","</goal>"],
+    "description": "scheme clause"
+  },
+  "goal" : {        
+    "prefix": "j- func goal",
+    "body": ["<goal id=\"${1:goal id}\"/>"],
+    "description": "scheme clause"
+  },
+  "mission":{
+    "prefix": "j- func mission",
+    "body": ["<mission id=\"${1:mission id}\"  min=\"1\" max=\"1\" >", "\t${2:j- func goal}","</mission>"],
+    "description": "mission clause"
+  },
+
+  "normative" : {        
+    "prefix": "j- norm spc",
+    "body": ["<normative-specification>", "\t${1:j- norm norm}", "</normative-specification>"],
+    "description": "normative specification"
+  }, 
+  "norm" : {        
+    "prefix": "j- norm norm",
+    "body": ["<norm id=\"${1:norm id}\" type=\"${2|obligation,permission|}\" role=\"${3:role id}\" mission=\"${4:mission id}\"/>"],
+    "description": "normative specification"
+  }  
+}

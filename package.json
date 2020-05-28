@@ -71,6 +71,10 @@
 			{
 				"language": "jason",
 				"path": "./snippets/asl.json"
+			},
+			{
+				"language": "xml",
+				"path": "./snippets/moise.json"
 			}
 		]
 	}

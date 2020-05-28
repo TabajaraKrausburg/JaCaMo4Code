@@ -54,7 +54,7 @@
       "operators":{
          "patterns":[
             {
-               "match": "(\\+|-|\\*|<|>|=<|>=|\\\\==|==|=:=|=)",
+               "match": "(\\+|-|\\*|/|<|>|=<|>=|\\\\==|==|=:=|=)",
                "name": "keyword.control.flow.asl"
             },
             {
@@ -407,10 +407,34 @@
             {
                "begin": "\\s*\\(\\s*",
                "end": "\\s*\\)\\s*",
-               "patterns": [   
+               "patterns": [    
+                  { "include": "#list" },     
                   { "include": "#module" },
                   { "include": "#strings" }, 
-                  { "include": "#constants" },   
+                  { "include": "#constants" },                 
+                  { "include": "#operators" },
+                  {
+                     "match": "~?[a-z][\\w]*",
+                     "name": "support.type.atom.asl"
+                  },
+                  { "include": "#variables" }                 
+               ]
+            }         
+         ]
+      },
+      "list": {
+         "name": "meta.function.list",
+         "patterns": [
+            {
+               "begin": "\\s*\\[\\s*",
+               "end": "\\s*\\]\\s*",
+               "patterns": [   
+                  {
+                     "match": "\\s*\\|\\s*",
+                     "name": "keyword.control.flow.tail.asl"
+                  },
+                  { "include": "#strings" }, 
+                  { "include": "#constants" },                 
                   { "include": "#operators" },
                   {
                      "match": "~?[a-z][\\w]*",

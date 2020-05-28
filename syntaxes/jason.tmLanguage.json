@@ -87,7 +87,7 @@
                "end": "\\s*}",
                "patterns": [                    
                   {
-                     "match": "\\s*(include)\\b",
+                     "match": "\\s*(include|begin|end|namespace|global|local)\\b",
                      "name": "keyword.control.flow.asl"
                   },
                   { "include": "#strings" },
@@ -98,7 +98,7 @@
                ]
             }
          ]
-      },
+      },      
       "declaration":{   
          "patterns": [         
             {

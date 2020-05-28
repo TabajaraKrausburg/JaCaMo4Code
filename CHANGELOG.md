@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Snippets for creating generic plans in Jason
 - Snippets for creating rules in Jason
 - Highlight of lists in Jason
+- Highlight namespace declaration in Jason
 ### Fixed
 - Comments in rules and triggering events in Jason
 - Highlight of literals within literals in Jason

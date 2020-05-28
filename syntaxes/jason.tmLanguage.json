@@ -90,7 +90,11 @@
                      "match": "\\s*(include)\\b",
                      "name": "keyword.control.flow.asl"
                   },
-                  { "include": "#strings" }
+                  { "include": "#strings" },
+                  {
+                     "match": "[a-z][\\w]*",
+                     "name": "support.type.atom.asl"
+                  }
                ]
             }
          ]

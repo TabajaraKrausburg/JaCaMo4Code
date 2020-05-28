@@ -11,7 +11,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Highlight of lists in Jason
 ### Fixed
 - Comments in rules in Jason
-- Highlighting of terms within terms in Jason
+- Highlighting of literals within literals in Jason
 
 ## [1.0.0] - 2020-05-23
 ### Added

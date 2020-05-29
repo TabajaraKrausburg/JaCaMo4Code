@@ -212,6 +212,7 @@
                "patterns": [  
                   { "include": "#comments" },
                   { "include": "#module" },
+                  { "include": "#annotation" },
                   {
                      "match": "!?[a-z]\\w*\\b",
                      "name": "entity.name.function.event.achievent.asl"
@@ -233,6 +234,7 @@
                "patterns": [  
                   { "include": "#comments" },
                   { "include": "#module" },
+                  { "include": "#annotation" },
                   {
                      "match": "~?[a-z]\\w*\\b",
                      "name": "entity.name.function.event.test.asl"
@@ -254,6 +256,7 @@
                "patterns": [  
                   { "include": "#comments" },
                   { "include": "#module" },
+                  { "include": "#annotation" },
                   {
                      "match": "~?[a-z]\\w*\\b",
                      "name": "entity.name.function.event.belief.asl"

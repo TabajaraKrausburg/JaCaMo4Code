@@ -137,7 +137,7 @@
             {
                "begin": "\\s*!!?",
                "beginCaptures": {
-                  "0": {"name": "keyword.other.asl"}
+                  "0": {"name": "keyword.other.achieve.asl"}
                },
                "end": "(?=(\\.\\s|;))",
                "patterns": [  
@@ -156,7 +156,7 @@
             {
                "begin": "\\s*\\?",
                "beginCaptures": {
-                  "0": {"name": "keyword.other.asl"}
+                  "0": {"name": "keyword.other.test.asl"}
                },
                "end": "(?=(\\.\\s|;))",
                "patterns": [  
@@ -179,10 +179,10 @@
             {
                "begin": "\\s*(\\:-)",
                "beginCaptures": {
-                  "0": {"name": "keyword.other.asl"}
+                  "0": {"name": "keyword.other.operator.asl"}
                },
                "end": "\\.\\s",
-               "endCaptures": {"0": {"name": "keyword.other.asl"}},
+               "endCaptures": {"0": {"name": "keyword.other.operator.asl"}},
                "patterns": [  
                   { "include": "#comments" }, 
                   { "include": "#operators" },
@@ -193,6 +193,7 @@
                      "name": "support.type.atom.asl"
                   },                  
                   { "include": "#constants" },
+                  { "include": "#strings" },
                   { "include": "#variables" },
                   { "include": "#terms" }
                ]
@@ -205,9 +206,9 @@
             {
                "begin": "\\s*(-|\\+|[\\^])!",
                "beginCaptures": {
-                  "0": {"name": "keyword.other.asl"}
+                  "0": {"name": "keyword.other.event.achievent.asl"}
                },
-               "end": "\\s*((?=(:|(<-)))|\\.\\s)",
+               "end": "\\s*((?=(: |(<-)))|\\.\\s)",
                "endCaptures": {"0": {"name": "keyword.other.asl"}},
                "patterns": [  
                   { "include": "#comments" },
@@ -215,7 +216,7 @@
                   { "include": "#annotation" },
                   {
                      "match": "!?[a-z]\\w*\\b",
-                     "name": "entity.name.function.event.achievent.asl"
+                     "name": "entity.name.function.event.achievement.asl"
                   },
                   {
                      "match": "!?[A-Z]\\w*\\b",
@@ -227,9 +228,9 @@
             {               
                "begin": "\\s*(-|\\+)\\?",
                "beginCaptures": {
-                  "0": {"name": "keyword.other.asl"}
+                  "0": {"name": "keyword.other.event.test.asl"}
                },
-               "end": "\\s*((?=(:|(<-)))|\\.\\s)",
+               "end": "\\s*((?=(: |(<-)))|\\.\\s)",
                "endCaptures": {"0": {"name": "keyword.other.asl"}},
                "patterns": [  
                   { "include": "#comments" },
@@ -249,9 +250,9 @@
             {               
                "begin": "(-|\\+)",
                "beginCaptures": {
-                  "0": {"name": "keyword.other.asl"}
+                  "0": {"name": "keyword.other.event.belief.asl"}
                },
-               "end": "\\s*((?=(:|(<-)))|\\s)",
+               "end": "\\s*((?=(: |(<-)))|\\s)",
                "endCaptures": {"0": {"name": "keyword.other.asl"}},
                "patterns": [  
                   { "include": "#comments" },
@@ -275,9 +276,9 @@
             {
                "name": "meta.function.plan.body",
                "begin": "\\s*(<-)\\s*",
-               "beginCaptures": { "0": { "name": "keyword.other.asl" } },
+               "beginCaptures": { "0": { "name": "keyword.other.operator.asl" } },
                "end": "\\s*\\.\\s",
-               "endCaptures": { "0": { "name": "keyword.other.asl" } },
+               "endCaptures": { "0": { "name": "keyword.other.operator.asl" } },
                "patterns": [
                   { "include": "#comments" },   
                   { "include": "#constants" },   
@@ -291,11 +292,11 @@
                   { "include": "#module" },
                   { "include": "#belief" },
                   { "include": "#action" },            
-                  { "include": "#operations" },            
+                  { "include": "#operation" },            
                   { "include": "#variables" },
                   {
                      "match": ";\\s",
-                     "name": "keyword.other.asl"
+                     "name": "keyword.other.operator.asl"
                   }
                ]
             }
@@ -306,9 +307,9 @@
             {
                "name": "meta.function.plan.context",
                "begin": "\\s*:\\s*",
-               "beginCaptures": { "0": { "name": "keyword.other.asl" } },
+               "beginCaptures": { "0": { "name": "keyword.other.operator.asl" } },
                "end": "\\s*((?=(<-))|\\.\\s)",
-               "endCaptures": { "0": { "name": "keyword.other.asl" } },
+               "endCaptures": { "0": { "name": "keyword.other.operator.asl" } },
                "patterns": [    
                   { "include": "#comments" },   
                   { "include": "#module" },   
@@ -358,8 +359,18 @@
                "name": "support.function.internal_action.std.asl"
             },
             {
-               "match": "([a-z]\\w*)(\\.\\w+)*",
+               "match": "([a-z]\\w*)(\\.\\w+)+",
                "name": "entity.name.function.internal_action.asl"
+            },
+            { "include": "#terms" },
+            { "include": "#annotation" }                  
+         ]
+      },
+      "operation":{
+         "patterns":[    
+            {
+               "match": "([a-z]\\w*)",
+               "name": "entity.name.function.operation.asl"
             },
             { "include": "#terms" },
             { "include": "#annotation" }                  
@@ -370,7 +381,7 @@
             {
                "begin": "\\s*(-\\+?|\\+)",
                "beginCaptures": {
-                  "0": {"name": "keyword.other.asl"}
+                  "0": {"name": "keyword.other.belief.asl"}
                },
                "end": "(?=(\\.\\s|;))",
                "patterns": [  
@@ -392,12 +403,16 @@
       "module":{
          "patterns": [
             {
-               "match": "([A-Z]|[a-z])[\\w]*::",
+               "match": "([a-z][\\w]*)(?=(::))",
                "name": "support.type.module.asl"
             },
             {
+               "match": "([A-Z][\\w]*)(?=(::))",
+               "name": "variable.other.asl"
+            },
+            {
                "match": "\\s*::",
-               "name": "support.type.module.asl"
+               "name": "keyword.other.punctuation.asl"
             }         
          ]
       },
@@ -405,7 +420,7 @@
          "patterns": [
             {
                "begin": "\\s*@",
-               "beginCaptures": { "0": {"name": "keyword.other.asl"} },
+               "beginCaptures": { "0": {"name": "keyword.other.punctuation.asl"} },
                "end": "\\s*\\s",
                "patterns": [  
                   {

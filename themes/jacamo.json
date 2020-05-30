@@ -1,0 +1,279 @@
+{
+    "name": "JaCaMo Theme",
+    "type": "",
+    "colors": {
+        "editor.background": "#FFF",
+        "editor.foreground": "#000",
+        "editor.lineHighlightBackground": "#ededed",        
+        "editor.selectionBackground": "#ededed",
+        "editor.selectionForeground": "#ededed",
+        "editorWhitespace.foreground": "#969696"
+    },
+    "tokenColors": [
+        {
+            "name": "Whitespace",
+            "scope": [
+                "editorWhitespace.foreground"
+            ],
+            "settings": {
+                "foreground": "#f00"
+            }
+        },
+        {
+            "name": "Comments",
+            "scope": [
+                "comment",
+                "punctuation.definition.comment"
+            ],
+            "settings": {
+                "foreground": "#777777",
+                "fontStyle": "italic"
+            }
+        },
+        {
+            "name": "Punctuation",
+            "scope": [
+                "keyword.other.punctuation.asl"
+            ],
+            "settings": {
+                "foreground": "#999999"
+            }
+        },
+        {
+            "name": "Builtin",
+            "scope": [
+                "support.function.internal_action.std.asl"
+            ],
+            "settings": {
+                "foreground": "#BB7700"
+            }
+        },
+        {
+            "name": "Function",
+            "scope": [
+                "entity.name.function.internal_action.asl",
+                "entity.name.function.operation.asl"
+            ],
+            "settings": {
+                "foreground": "#AA6600"
+            }
+        },
+        {
+            "name": "Class",
+            "scope": [
+                "keyword.other"
+            ],
+            "settings": {
+                "foreground": "#00aa00",
+                "fontStyle": "underline"
+            }
+        },
+        {
+            "name": "Namespace",
+            "scope": [
+                "keyword.other"
+            ],
+            "settings": {
+                "foreground": "#907020"
+            }
+        },
+        {
+            "name": "Variable",
+            "scope": [
+                "variable.other.asl"
+            ],
+            "settings": {
+                "foreground": "#660099"
+            }
+        },
+        {
+            "name": "Constant",
+            "scope": [
+                "keyword.other"
+            ],
+            "settings": {
+                "foreground": "#aa0000"
+            }
+        },
+        {
+            "name": "Entity",
+            "scope": [
+                "keyword.other"
+            ],
+            "settings": {
+                "foreground": "#800",
+                "fontStyle": "bold"
+            }
+        },
+        {
+            "name": "Attribute",
+            "scope": [
+                "keyword.other"
+            ],
+            "settings": {
+                "foreground": "#770000"
+            }
+        },
+        {
+            "name": "Tag",
+            "scope": [
+                "keyword.other"
+            ],
+            "settings": {
+                "foreground": "#1e90ff",
+                "fontStyle":"bold"
+            }
+        },
+        {
+            "name": "Decorator",
+            "scope": [
+                "keyword.other"
+            ],
+            "settings": {
+                "foreground": "#888888"
+            }
+        },
+        {
+            "name": "String",
+            "scope": [
+                "string.quoted.double.asl"
+            ],
+            "settings": {
+                "foreground": "#cc4466"
+            }
+        },
+        {
+            "name": "Number",
+            "scope": [
+                "constant.character.numeric.integer.asl",
+                "constant.character.numeric.float.asl"
+            ],
+            "settings": {
+                "foreground": "#cc4466"
+            }
+        },
+        {
+            "name": "Error",
+            "scope": [
+                "keyword.other"
+            ],
+            "settings": {
+                "foreground": "#F00"                
+            }
+        },
+        {
+            "name": "EventBel",
+            "scope": [
+                "keyword.other.event.belief.asl",
+                "keyword.other.belief.asl"
+            ],
+            "settings": {
+                "foreground": "#BB0000",
+                "fontStyle":"bold"
+            }
+        },
+        {
+            "name": "Belief",
+            "scope": [
+                "entity.name.function.event.belief.asl",
+                "entity.name.function.belief.asl",
+                "support.type.atom.asl",
+                "support.type.module.asl",
+                "support.type.label.asl"
+            ],
+            "settings": {
+                "foreground": "#BB0000"
+            }
+        },
+        {
+            "name": "Builtin",
+            "scope": [
+                "keyword.other"
+            ],
+            "settings": {
+                "foreground": "#BB7700"
+            }
+        },
+        {
+            "name": "Goal",
+            "scope": [
+                "support.function.goal.achievement.asl",
+                "entity.name.function.event.achievement.asl"
+            ],
+            "settings": {
+                "foreground": "#0000BB"
+            }
+        },
+        {
+            "name": "EventGoal",
+            "scope": [
+                "keyword.other.achieve.asl",
+                "keyword.other.event.achievent.asl"
+            ],
+            "settings": {
+                "foreground": "#0000BB",
+                "fontStyle":"bold"
+            }
+        },
+        {
+            "name": "EventTGoal",
+            "scope": [
+                "keyword.other.test.asl",
+                "keyword.other.event.test.asl"
+            ],
+            "settings": {
+                "foreground": "#0000A4",
+                "fontStyle":"bold"
+            }
+        },
+        {
+            "name": "TGoal",
+            "scope": [
+                "support.function.goal.test.asl",
+                "entity.name.function.event.test.asl"
+            ],
+            "settings": {
+                "foreground": "#0000A4"
+            }
+        },
+        {
+            "name": "Action",
+            "scope": [
+                "keyword.other"
+            ],
+            "settings": {
+                "foreground": "#CC8800"
+            }
+        },
+        {
+            "name": "Keyword",
+            "scope": [
+                "keyword.control.flow"
+            ],
+            "settings": {
+                "foreground": "#000000",
+                "fontStyle":"bold"
+            }
+        },
+        {
+            "name": "Operator",
+            "scope": [
+                "keyword.other.operator.asl"
+            ],
+            "settings": {
+                "foreground": "#000000",
+                "fontStyle":"bold"
+            }
+        },
+        {
+            "name": "Logical",
+            "scope": [
+                "keyword.control.flow.logic.asl"
+            ],
+            "settings": {
+                "foreground": "#DD0000",
+                "fontStyle":"bold"
+            }
+        }
+    ]
+}

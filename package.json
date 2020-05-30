@@ -14,7 +14,8 @@
 	},
 	"categories": [
 		"Programming Languages",
-		"Snippets"
+		"Snippets",
+		"Themes"
 	],
 	"contributes": {
 		"languages": [
@@ -76,6 +77,13 @@
 				"language": "xml",
 				"path": "./snippets/moise.json"
 			}
-		]
+		],
+		"themes": [
+            {
+                "label": "JaCaMo Theme",
+                "uiTheme": "vs",
+                "path": "./themes/jacamo.json"
+            }
+        ]
 	}
 }

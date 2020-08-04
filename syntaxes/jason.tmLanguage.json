@@ -150,7 +150,8 @@
                      "match": "[A-Z]\\w*\\b",
                      "name": "variable.other.asl"
                   },
-                  { "include": "#terms" }
+                  { "include": "#terms" },
+                  { "include": "#annotation" }
                ]
             },
             {
@@ -169,7 +170,8 @@
                      "match": "[~]?[A-Z]\\w*\\b",
                      "name": "variable.other.asl"
                   },
-                  { "include": "#terms" }
+                  { "include": "#terms" },
+                  { "include": "#annotation" }
                ]
             }
          ]

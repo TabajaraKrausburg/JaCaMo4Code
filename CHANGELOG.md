@@ -7,6 +7,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ## [1.1.1] - to be released
 ### Fixed
 - Annotations in triggering events in Jason
+- Annotations in goals in Jason
 
 ## [1.1.0] - 2020-05-28
 ### Added

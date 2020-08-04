@@ -82,7 +82,7 @@
             {
                 "label": "JaCaMo Theme",
                 "uiTheme": "vs",
-                "path": "./themes/jacamo.json"
+                "path": "./themes/jacamo.color-theme.json"
             }
         ]
 	}

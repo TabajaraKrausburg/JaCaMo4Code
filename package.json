@@ -2,7 +2,7 @@
 	"name": "jacamo4code",
 	"displayName": "JaCaMo4Code",
 	"description": "JaCaMo syntax highlighting and code snippets for VS Code.",
-	"version": "1.2.0",
+	"version": "1.2.1",
 	"publisher": "tabajara-krausburg",
 	"engines": {
 		"vscode": "^1.45.0"

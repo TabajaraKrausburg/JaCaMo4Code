@@ -1,7 +1,5 @@
 # JaCaMo for Code
 
-[![Marketplace](https://vsmarketplacebadge.apphb.com/version/tabajara-krausburg.jacamo4code.svg)](https://marketplace.visualstudio.com/items/tabajara-krausburg.jacamo4code) [![Installs](https://vsmarketplacebadge.apphb.com/installs/tabajara-krausburg.jacamo4code.svg)](https://marketplace.visualstudio.com/items/tabajara-krausburg.jacamo4code) [![Ratings](https://vsmarketplacebadge.apphb.com/rating-short/tabajara-krausburg.jacamo4code.svg)](https://marketplace.visualstudio.com/items/tabajara-krausburg.jacamo4code)
-
 *Syntax Highlighting* and *Code Snippets* for **JaCaMo**-based projects.
 
 ![alt text](/img/example.png)
